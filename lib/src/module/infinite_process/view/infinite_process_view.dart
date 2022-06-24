@@ -34,14 +34,14 @@ class _InfiniteProcessViewState extends State<InfiniteProcessView> {
   }
 
   void withCompute() async {
-    final i = await compute(add, 100000001);
+    final i = await compute(add, 134000001);
     setState(() {
       result = i;
     });
   }
 
-  void withOutCompute() {
-    final i = add(100000000);
+  void withOutCompute() async {
+    final i = add(134000000);
     setState(() {
       result = i;
     });
@@ -49,8 +49,11 @@ class _InfiniteProcessViewState extends State<InfiniteProcessView> {
 }
 
 int add(int n) {
+  int a = 0;
   for (int i = 0; i < n; i++) {
     list.add(i);
   }
-  return list.length;
+  a = list.length;
+  list.clear();
+  return a;
 }
