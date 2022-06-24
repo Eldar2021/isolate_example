@@ -14,23 +14,21 @@ class _InfiniteProcessViewState extends State<InfiniteProcessView> {
   int result = 0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            const CircularProgressIndicator(),
-            Text('$result'),
-            ElevatedButton(
-              onPressed: withCompute,
-              child: const Text('with isolate'),
-            ),
-            ElevatedButton(
-              onPressed: withOutCompute,
-              child: const Text('with out isolate'),
-            ),
-          ],
-        ),
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          const CircularProgressIndicator(),
+          Text('$result'),
+          ElevatedButton(
+            onPressed: withCompute,
+            child: const Text('with isolate'),
+          ),
+          ElevatedButton(
+            onPressed: withOutCompute,
+            child: const Text('with out isolate'),
+          ),
+        ],
       ),
     );
   }
